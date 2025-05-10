@@ -8,7 +8,6 @@ class Program
     static void Main(string[] args)
     {
         string targetProcessName = args.Length > 0 ? args[0] : "TiWorker";
-        string logFilePath = $"log_{targetProcessName}.log";
         int checkInterval = 10000; // 10 seconds
 
         Console.WriteLine($"目標程序名稱: {targetProcessName}");
