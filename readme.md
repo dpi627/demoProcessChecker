@@ -2,7 +2,7 @@
 
 - 檢查特定程序是否執行中，並進行紀錄
 - 可帶入執行序名稱，預設為 `TiWorker`，會檢查 `TiWorker.exe`
-- 使用文字檔紀錄，十秒檢查一次，一小時一個檔案，寫入 `*.log`
+- 五秒檢查一次寫入 `*.log`，一小時為單位生成一個檔案
 
 # 👾Development in CLI
 
@@ -27,12 +27,29 @@ dotnet run
 # 🏃‍➡️Use Case
 
 ```sh
-# watch TiWorker.exe
+# watch TiWorker.exe, 5 sec/time
 demoProcessChecker
 
 # watch other exe, e.g. vs2022
 demoProcessChecker devenv
+
+# watch with custom interval, e.g. 60 sec/time
+demoProcessChecker devenv 60
 ```
+
+# 🖥️Screen Shot
+
+## Running in Windows Terminal
+
+![](./assets/console.png)
+
+- Always output the message, whether found or not.
+
+## Log File
+
+![](./assets/log.png)
+
+- Logging when the process is detected as running.
 
 # 🕜Seq Diagram
 
