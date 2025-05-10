@@ -8,10 +8,10 @@ class Program
     static void Main(string[] args)
     {
         string targetProcessName = args.Length > 0 ? args[0] : "TiWorker";
-        Console.WriteLine($"目標程序名稱: {targetProcessName}");
         string logFilePath = $"log_{targetProcessName}.log";
         int checkInterval = 10000; // 10 seconds
 
+        Console.WriteLine($"目標程序名稱: {targetProcessName}");
         Console.WriteLine($"開始監控 {targetProcessName}.exe... 按 Ctrl+C 停止");
         
         while (true)
