@@ -8,7 +8,8 @@ class Program
     static void Main(string[] args)
     {
         string targetProcessName = args.Length > 0 ? args[0] : "TiWorker";
-        int checkInterval = 10000; // 10 seconds
+        int interval = args.Length > 1 ? int.Parse(args[1]) : 5; // default 5 seconds
+        int checkInterval = interval * 1000; // convert to milliseconds
 
         Console.WriteLine($"目標程序名稱: {targetProcessName}");
         Console.WriteLine($"開始監控 {targetProcessName}.exe... 按 Ctrl+C 停止");
